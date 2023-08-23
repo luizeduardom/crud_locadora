@@ -16,15 +16,10 @@ import org.hibernate.cfg.Configuration;
 public class ConexaoHibernate {
     private static final SessionFactory sessionFactory;
 
-
-    
     static {
         try {
-            // Create the SessionFactory from standard (hibernate.cfg.xml) 
-            // config file.
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (HibernateException ex) {
-            // Log the exception. 
             System.err.println("Criação da sessão falhou." + ex);
             throw new ExceptionInInitializerError(ex);
         }
