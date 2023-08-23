@@ -17,6 +17,8 @@ public class ConexaoHibernate {
     private static final SessionFactory sessionFactory;
 
     static {
+
+        
         try {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (HibernateException ex) {
