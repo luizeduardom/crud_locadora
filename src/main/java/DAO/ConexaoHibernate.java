@@ -15,6 +15,8 @@ import org.hibernate.cfg.Configuration;
  */
 public class ConexaoHibernate {
     private static final SessionFactory sessionFactory;
+
+
     
     static {
         try {
