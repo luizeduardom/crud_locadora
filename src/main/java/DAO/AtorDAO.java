@@ -1,6 +1,11 @@
 package DAO;
+
 import dominio.Ator;
-import org.hibernate.*;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class AtorDAO {
     public AtorDAO() {
@@ -19,4 +24,48 @@ public class AtorDAO {
             e.printStackTrace();
         }
     }
+
+    public static List<Ator> getLista(){
+        try (Session session = ConexaoHibernate.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Ator", Ator.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    public static Ator getAtorById(int id) {
+        try (Session session = ConexaoHibernate.getSessionFactory().openSession()) {
+            return session.get(Ator.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void deletarAtor(int id) {
+        try (Session session = ConexaoHibernate.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+
+            Ator ator = session.get(Ator.class, id);
+            if (ator != null) {
+                session.delete(ator);
+                transaction.commit();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void atualizarAtor(Ator ator) {
+        try (Session session = ConexaoHibernate.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.update(ator);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
