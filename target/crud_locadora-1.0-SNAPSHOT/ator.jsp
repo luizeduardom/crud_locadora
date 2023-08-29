@@ -21,7 +21,7 @@
     </div>
     <h2>Adicionar Ator</h2>
     <form action="AtorController?action=add" method="post" class="actor-form">
-        Nome: <input type="text" name="nome" required style="width: 50%">
+        Nome: <input type="text" name="nome" required pattern="[A-Za-z ]+" title="Por favor, insira apenas letras" style="width: 50%" >
         <input type="submit" class="form-button" value="Adicionar" style="width: 30%">
     </form>
 </div>

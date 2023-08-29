@@ -58,7 +58,6 @@ public class AtorController extends HttpServlet {
     private void atualizarAtor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String nome = request.getParameter("nome");
-        String nomeClasse = request.getParameter("classe");
 
         // Lógica para atualizar o ator com os novos detalhes
         Ator ator = AtorDAO.getAtorById(id);
@@ -74,7 +73,6 @@ public class AtorController extends HttpServlet {
 
     private void editarAtor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtenha o ID do ator da requisição
-        out.println("to entrando aq");
         String idStr = request.getParameter("id");
         if (idStr != null && !idStr.isEmpty()) {
             int id = Integer.parseInt(idStr);

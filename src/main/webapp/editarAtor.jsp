@@ -10,9 +10,9 @@
 
 <div class="page-container">
     <form action="AtorController?action=atualizar" method="post" class="actor-form">
-        <input type="hidden" name="id" value="${ator.getId()}">
+        <input type="hidden" name="id" value="${ator.getId()}" >
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="${ator.getNome()}" required>
+        <input type="text" id="nome" name="nome" required pattern="[A-Za-z ]+" title="Por favor, insira apenas letras" value="${ator.getNome()}" style="width: 50%" >
         <input type="submit" value="Salvar" class="form-button" style="width: 40%">
     </form>
     <br>
