@@ -7,13 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import DAO.AtorDAO;
+import aplicacao.AtorDAO;
 import dominio.Ator;
 
 import javax.servlet.*;
-
-import static DAO.AtorDAO.getAtorById;
-import static java.lang.System.out;
 
 @WebServlet(value = "/AtorController", loadOnStartup = 1)
 public class AtorController extends HttpServlet {

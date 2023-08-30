@@ -1,5 +1,6 @@
-package DAO;
+package aplicacao;
 
+import DAO.ConexaoHibernate;
 import dominio.Ator;
 import org.hibernate.Query;
 import org.hibernate.Session;

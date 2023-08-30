@@ -7,13 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import DAO.ClasseDAO;
+import aplicacao.ClasseDAO;
 import dominio.Classe;
 
 import javax.servlet.*;
-
-import static DAO.ClasseDAO.getClasseById;
-import static java.lang.System.out;
 
 @WebServlet(value = "/ClasseController", loadOnStartup = 1)
 public class ClasseController extends HttpServlet {
